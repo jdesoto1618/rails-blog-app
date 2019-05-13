@@ -1,24 +1,3 @@
-# README
+## This is designed to be a blog app which implements CRUD functionality and user authentication. User roles may follow in future updates.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## It will be built on *Rails 5.2.3* and *Ruby 2.5.1* The database is SQL based and utilizes PostgreSQL. Steps will be documented in commit logs.
