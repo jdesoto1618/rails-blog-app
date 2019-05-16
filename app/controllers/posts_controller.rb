@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # index method for all posts page
   def index
-
+    @posts = Post.all
   end
 
   def new
