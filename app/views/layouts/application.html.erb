@@ -4,12 +4,35 @@
     <title>RailsBlogApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+    <!-- ie edge shim -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- set viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- foundation css cdn link -->
+    <%= stylesheet_link_tag    'https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <!-- foundation navbar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">BlogSpace</li>
+          <li><%= link_to 'Home', home_path %></li>
+      </div>
+
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><%= link_to 'Create Post', new_post_path %></li>
+        </ul>
+      </div>
+    </div> <!-- ends foundation navbar -->
+
+    <!-- foundation grid container class -->
+    <div class="grid-container">
+      <%= yield %>
+    </div>
   </body>
 </html>
