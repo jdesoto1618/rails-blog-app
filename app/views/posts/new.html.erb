@@ -1,6 +1,17 @@
 <h1>Create New Post</h1>
 <!-- set url for the form to submit to create path from posts controller on click -->
 <%= form_for :post, url: posts_path do |f| %>
+  <!-- form validation error messages -->
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <div data-closable class="callout alert">
+        <button class="close-button" aria-label="Close alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= msg %>
+      </div>
+    <% end %>
+  <% end %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>

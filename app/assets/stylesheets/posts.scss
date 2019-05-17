@@ -1,3 +1,13 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// style the alert borders
+div.callout {
+  border-radius: 6px;
+}
+
+// style the alert text
+div.callout.alert {
+  color: #a94442
+}
