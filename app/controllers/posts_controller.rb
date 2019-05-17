@@ -4,17 +4,22 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  # use this method for instance variables to be passed to the new view
   def new
-
+    @post = Post.new
   end
 
   def create
     # Post.new references the model. post_params references private method
     @post = Post.new(post_params)
-    # save a new post once it's created
-    @post.save
-    # show the new post after it's created and saved
-    redirect_to @post
+    # save a new post once it's created. this goes along with form validations in the model
+    if(@post.save)
+      # show the new post after it's created and saved
+      redirect_to @post
+    else
+      # if form validations do not pass, render the new view again
+      render 'new'
+    end
   end
 
   def show
