@@ -1,6 +1,10 @@
 <h1 class='text-center'>Home Page</h1>
 <% @posts.each do |post| %>
-  <h2><%= post.title %></h2>
-  <p><%= post.body %></p>
-  <hr>
+  <div class="card">
+    <div class="card-section">
+      <h2><%= post.title %></h2>
+      <p><%= post.body %></p>
+      <%= link_to "Show Post", post_path(post), :class => 'button primary' %>
+    </div>
+  </div>
 <% end %>
