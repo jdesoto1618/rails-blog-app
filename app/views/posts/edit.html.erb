@@ -1,0 +1,29 @@
+<h1>Edit Post</h1>
+<!-- set url for the form to submit to an edit path from the post controller on click -->
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+  <!-- form validation error messages -->
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <div data-closable class="callout alert">
+        <button class="close-button" aria-label="Close alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= msg %>
+      </div>
+    <% end %>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit 'Edit Post', ({:class => 'button'}) %>
+  </p>
+
+<% end %>

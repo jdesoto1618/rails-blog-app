@@ -27,6 +27,24 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  # this method will allow post editing
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  # method to save updates to a post once it has been edited
+  def update
+    @post = Post.find(params[:id])
+    # update a post and bring in previous post values
+    if(@post.update(post_params))
+      # show the edited post after it's successfully updated
+      redirect_to @post
+    else
+      # if form validations do not pass, render the edit view again
+      render 'edit'
+    end
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :body)
