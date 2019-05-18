@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  # this method will allow post editing
+  # this method will bring in post values and allow editing
   def edit
     @post = Post.find(params[:id])
   end
@@ -43,6 +43,13 @@ class PostsController < ApplicationController
       # if form validations do not pass, render the edit view again
       render 'edit'
     end
+  end
+
+  # method to delete a post
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
