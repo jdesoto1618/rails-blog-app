@@ -1,0 +1,18 @@
+<!-- show all comments to a post -->
+<h3>Comments</h3>
+<!-- since there may be many comments, loop through to show all -->
+<% @post.comments.each do |comment| %>
+  <div class="card">
+    <div class="card-section">
+      <p>
+        <strong><%= comment.username %></strong>:
+        <%= comment.body %>
+        <!-- delete a comment link -->
+        <%= link_to '&times;'.html_safe, [comment.post, comment],
+        class: 'close',
+        method: :delete,
+        data: {confirm: 'Delete Comment?'} %>
+      </p>
+    </div>
+  </div>
+<% end %>

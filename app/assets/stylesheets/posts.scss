@@ -17,3 +17,12 @@ div.card {
   background: #e6e6e6;
   border-radius: 6px;
 }
+
+// style the close X for deleting comments
+a.close {
+  background: #f7e4e1;
+  color: #a94442;
+  padding: 3px 5px 5px 5px;
+  margin-left: 10px;
+  border: 1px solid #a94442;
+}
