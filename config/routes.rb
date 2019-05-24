@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # /about will show in url, maps to pages controller, about method
   get 'about' => 'pages#about', as: 'about'
   # setting the posts as a resource enables crud routes for the posts controller
