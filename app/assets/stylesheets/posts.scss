@@ -26,3 +26,21 @@ a.close {
   margin-left: 10px;
   border: 1px solid #a94442;
 }
+
+// style the devise alerts and notifications
+.alert.alert-success,
+.alert.alert-danger {
+  margin: 0;
+}
+
+.alert.alert-success {
+  color: #00d64d;
+}
+
+.alert.alert-danger {
+  color: #ee6550;
+}
+
+div#error_explanation h2 {
+  display: none;
+}
